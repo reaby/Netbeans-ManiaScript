@@ -1,5 +1,5 @@
 -------------------------------------------------------------------------------
->Log Session: Tuesday, February 19, 2013 12:26:52 PM EET
+>Log Session: Tuesday, February 19, 2013 2:56:03 PM EET
 >System Info: 
   Product Version         = NetBeans IDE 7.3 Beta 2 (Build 201211062253) (#4b9ddecda013)
   Operating System        = Windows 8 version 6.2 running on amd64
@@ -188,9 +188,9 @@ INFO [org.netbeans.core.startup.NbEvents]: Turning on modules:
 	org.netbeans.modules.javascript2.editor/1 [0.2.1 201211062253]
 	org.netbeans.modules.javascript2.kit/1 [0.2.1 201211062253]
 	org.netbeans.core.browser/1 [1.16.1.1 1 201211062253]
-	org.netbeans.core.output2/1 [1.29.1 201211062253]
 	org.netbeans.lib.terminalemulator [1.22.1 201211062253]
 	org.netbeans.modules.terminal [1.12.1 201211062253]
+	org.netbeans.core.output2/1 [1.29.1 201211062253]
 	org.netbeans.modules.editor.plain.lib/1 [1.23.1 201211062253]
 	org.netbeans.libs.swingx/1 [1.17.1 201211062253]
 	org.netbeans.modules.css.visual/3 [3.8.1 201211062253]
@@ -502,8 +502,8 @@ Compiler: HotSpot 64-Bit Tiered Compilers
 Heap memory usage: initial 32,0MB maximum 682,7MB
 Non heap memory usage: initial 34,4MB maximum 432,0MB
 Garbage collector: PS Scavenge (Collections=14 Total time spent=0s)
-Garbage collector: PS MarkSweep (Collections=1 Total time spent=0s)
-Classes: loaded=6217 total loaded=6217 unloaded 0
+Garbage collector: PS MarkSweep (Collections=2 Total time spent=0s)
+Classes: loaded=6077 total loaded=6077 unloaded 0
 INFO [org.netbeans.core.ui.warmup.DiagnosticTask]: Total memory 8 588 021 760
 WARNING [org.netbeans.TopSecurityManager]: use of system property netbeans.user has been obsoleted in favor of InstalledFileLocator/Places at org.netbeans.modules.spellchecker.ComponentPeer.getUsersLocalDictionary(ComponentPeer.java:442)
 WARNING [org.netbeans.core.startup.InstalledFileLocatorImpl]: no code name base passed when looking up modules/dict/ispell-enwl-3.1.20.zip at org.netbeans.core.startup.layers.NbinstURLMapper.decodeURL(NbinstURLMapper.java:121)
@@ -513,11 +513,8 @@ WARNING [org.netbeans.core.startup.InstalledFileLocatorImpl]: no code name base 
 WARNING [org.netbeans.core.startup.InstalledFileLocatorImpl]: no code name base passed when looking up modules/dict/ispell-enwl-3.1.20.zip at org.netbeans.core.startup.layers.NbinstURLMapper.decodeURL(NbinstURLMapper.java:121)
 WARNING [org.netbeans.core.startup.InstalledFileLocatorImpl]: no code name base passed when looking up modules/dict/ispell-enwl-3.1.20.zip at org.netbeans.core.startup.layers.NbinstURLMapper.decodeURL(NbinstURLMapper.java:121)
 WARNING [org.netbeans.core.startup.InstalledFileLocatorImpl]: no code name base passed when looking up modules/dict/ispell-enwl-3.1.20.zip at org.netbeans.core.startup.layers.NbinstURLMapper.decodeURL(NbinstURLMapper.java:121)
-WARNING [org.netbeans.TopSecurityManager]: use of system property netbeans.user has been obsoleted in favor of InstalledFileLocator/Places at org.netbeans.modules.versioning.masterfs.FilesystemInterceptor.getRootFilesystem(FilesystemInterceptor.java:81)
 WARNING [org.netbeans.TopSecurityManager]: use of system property netbeans.user has been obsoleted in favor of InstalledFileLocator/Places at org.netbeans.modules.versioning.core.VersioningManager.getLocalHistory(VersioningManager.java:484)
-INFO [org.netbeans.modules.parsing.impl.indexing.RepositoryUpdater]: Resolving dependencies took: 3 ms
-INFO [org.netbeans.modules.parsing.impl.indexing.RepositoryUpdater]: Complete indexing of 0 binary roots took: 1 ms
+INFO [org.netbeans.modules.parsing.impl.indexing.RepositoryUpdater]: Resolving dependencies took: 2 ms
+INFO [org.netbeans.modules.parsing.impl.indexing.RepositoryUpdater]: Complete indexing of 0 binary roots took: 0 ms
 INFO [org.netbeans.modules.parsing.impl.indexing.RepositoryUpdater]: Complete indexing of 0 source roots took: 0 ms (New or modified files: 0, Deleted files: 0) [Adding listeners took: 0 ms]
-INFO [org.netbeans.core.netigso.Netigso]: bundle org.eclipse.osgi@3.8.0.v20120529-1548 256
-INFO [org.netbeans.core.netigso.Netigso]: bundle org.eclipse.osgi@3.8.0.v20120529-1548 stopped
-INFO [org.netbeans.core.netigso.Netigso]: bundle org.eclipse.osgi@3.8.0.v20120529-1548 stopped
+WARNING [org.netbeans.TopSecurityManager]: use of system property netbeans.user has been obsoleted in favor of InstalledFileLocator/Places at org.netbeans.modules.versioning.masterfs.FilesystemInterceptor.getRootFilesystem(FilesystemInterceptor.java:81)

@@ -52,6 +52,12 @@
                         methodvalue="org.netbeans.modules.csl.core.CslEditorKit.createLexerLanguageInstance" name="instanceCreate"/>
                     <attr name="instanceOf" stringvalue="org.netbeans.api.lexer.Language"/>
                 </file>
+                <file name="org-netbeans-modules-csl-core-GsfParserFactory-create.instance">
+                    <!--org.maniascript.ManiascriptLanguage-->
+                    <attr
+                        methodvalue="org.netbeans.modules.csl.core.GsfParserFactory.create" name="instanceCreate"/>
+                    <attr name="instanceOf" stringvalue="org.netbeans.modules.parsing.spi.ParserFactory"/>
+                </file>
                 <folder name="CompletionProviders">
                     <file name="org-netbeans-lib-editor-codetemplates-CodeTemplateCompletionProvider.instance">
                         <!--org.maniascript.ManiascriptLanguage-->

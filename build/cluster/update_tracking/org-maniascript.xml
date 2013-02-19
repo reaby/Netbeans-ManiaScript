@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><module codename="org.maniascript">
-    <module_version install_time="1361269612196" last="true" origin="installer" specification_version="1.0">
+    <module_version install_time="1361278562680" last="true" origin="installer" specification_version="1.0">
         <file crc="3677625666" name="config/Modules/org-maniascript.xml"/>
-        <file crc="163142519" name="modules/org-maniascript.jar"/>
+        <file crc="1508063037" name="modules/org-maniascript.jar"/>
     </module_version>
 </module>
