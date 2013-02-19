@@ -26,7 +26,7 @@ import org.openide.windows.TopComponent;
 @MIMEResolver.ExtensionRegistration(
     displayName = "#LBL_maniascript_LOADER",
 mimeType = "text/x-maniascript",
-extension = {"ManiaScript"})
+extension = "txtm")
 @DataObject.Registration(
     mimeType = "text/x-maniascript",
 iconBase = "org/maniascript/mplanet16.png",
