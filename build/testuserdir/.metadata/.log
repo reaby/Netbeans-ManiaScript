@@ -1,0 +1,32 @@
+!SESSION 2013-02-19 12:26:56.586 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.7.0_11
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+
+!ENTRY org.eclipse.osgi 4 0 2013-02-19 12:26:56.586
+!MESSAGE error loading hook: org.eclipse.osgi.internal.baseadaptor.weaving.WeavingHookConfigurator
+!STACK 0
+java.lang.ClassNotFoundException: org.eclipse.osgi.internal.baseadaptor.weaving.WeavingHookConfigurator starting from ModuleCL@2af02b36[org.netbeans.modules.netbinox] with possible defining loaders null and declared parents [org.netbeans.MainImpl$BootClassLoader@557ce3bb, ModuleCL@5cc83020[org.netbeans.libs.osgi], ModuleCL@22a992f9[org.netbeans.core.netigso]]
+	at org.netbeans.ProxyClassLoader.loadClass(ProxyClassLoader.java:228)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:356)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:186)
+	at org.eclipse.osgi.baseadaptor.HookRegistry.loadConfigurators(HookRegistry.java:176)
+	at org.eclipse.osgi.baseadaptor.HookRegistry.initialize(HookRegistry.java:100)
+	at org.eclipse.osgi.baseadaptor.BaseAdaptor.<init>(BaseAdaptor.java:98)
+	at org.eclipse.osgi.framework.internal.core.EquinoxLauncher.internalInit(EquinoxLauncher.java:67)
+	at org.eclipse.osgi.framework.internal.core.EquinoxLauncher.init(EquinoxLauncher.java:37)
+	at org.eclipse.osgi.launch.Equinox.init(Equinox.java:178)
+	at org.netbeans.modules.netbinox.Netbinox.init(Netbinox.java:84)
+	at org.netbeans.core.netigso.Netigso.prepare(Netigso.java:166)
+	at org.netbeans.NetigsoHandle.turnOn(NetigsoHandle.java:125)
+	at org.netbeans.ModuleManager.enable(ModuleManager.java:1167)
+	at org.netbeans.ModuleManager.enable(ModuleManager.java:1002)
+	at org.netbeans.core.startup.ModuleList.installNew(ModuleList.java:340)
+	at org.netbeans.core.startup.ModuleList.trigger(ModuleList.java:276)
+	at org.netbeans.core.startup.ModuleSystem.restore(ModuleSystem.java:296)
+	at org.netbeans.core.startup.Main.getModuleSystem(Main.java:169)
+	at org.netbeans.core.startup.Main.start(Main.java:305)
+	at org.netbeans.core.startup.TopThreadGroup.run(TopThreadGroup.java:123)
+	at java.lang.Thread.run(Thread.java:722)

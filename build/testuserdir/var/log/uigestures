@@ -1,0 +1,141 @@
+<record>
+  <date>2013-02-19T12:27:01</date>
+  <millis>1361269621952</millis>
+  <sequence>39</sequence>
+  <level>FINEST</level>
+  <thread>14</thread>
+  <message>CPU INFO</message>
+  <param>4</param>
+</record>
+<record>
+  <date>2013-02-19T12:27:01</date>
+  <millis>1361269621955</millis>
+  <sequence>40</sequence>
+  <level>FINEST</level>
+  <thread>14</thread>
+  <message>SCREEN SIZE</message>
+  <param>1920</param>
+  <param>1200</param>
+  <param>1</param>
+</record>
+<record>
+  <date>2013-02-19T12:27:01</date>
+  <millis>1361269621955</millis>
+  <sequence>41</sequence>
+  <level>CONFIG</level>
+  <thread>14</thread>
+  <message>IDE_STARTUP</message>
+</record>
+<record>
+  <date>2013-02-19T12:27:07</date>
+  <millis>1361269627853</millis>
+  <sequence>49</sequence>
+  <level>INFO</level>
+  <thread>29</thread>
+  <message>MEMORY</message>
+  <key>MEMORY</key>
+  <catalog>&lt;null&gt;</catalog>
+  <param>8588021760</param>
+</record>
+<record>
+  <date>2013-02-19T12:27:08</date>
+  <millis>1361269628506</millis>
+  <sequence>50</sequence>
+  <logger>org.netbeans.ui.focus</logger>
+  <level>FINE</level>
+  <thread>20</thread>
+  <message>LOG_WINDOW_DEACTIVATED</message>
+  <key>LOG_WINDOW_DEACTIVATED</key>
+  <catalog>org.netbeans.core.ui.warmup.Bundle</catalog>
+</record>
+<record>
+  <date>2013-02-19T12:27:13</date>
+  <millis>1361269633340</millis>
+  <sequence>59</sequence>
+  <logger>org.netbeans.ui.indexing</logger>
+  <level>INFO</level>
+  <thread>28</thread>
+  <message>INDEXING_STARTED</message>
+  <key>INDEXING_STARTED</key>
+  <catalog>org.netbeans.modules.parsing.impl.indexing.Bundle</catalog>
+  <param>0</param>
+</record>
+<record>
+  <date>2013-02-19T12:27:14</date>
+  <millis>1361269634257</millis>
+  <sequence>67</sequence>
+  <logger>org.netbeans.ui.indexing</logger>
+  <level>INFO</level>
+  <thread>28</thread>
+  <message>INDEXING_FINISHED</message>
+  <key>INDEXING_FINISHED</key>
+  <catalog>org.netbeans.modules.parsing.impl.indexing.Bundle</catalog>
+  <param>916</param>
+</record>
+<record>
+  <date>2013-02-19T12:27:14</date>
+  <millis>1361269634813</millis>
+  <sequence>68</sequence>
+  <logger>org.netbeans.ui.focus</logger>
+  <level>FINE</level>
+  <thread>45</thread>
+  <message>LOG_WINDOW_ACTIVATED</message>
+  <key>LOG_WINDOW_ACTIVATED</key>
+  <catalog>org.netbeans.core.ui.warmup.Bundle</catalog>
+  <param>10</param>
+</record>
+<record>
+  <date>2013-02-19T12:27:53</date>
+  <millis>1361269673682</millis>
+  <sequence>69</sequence>
+  <logger>org.netbeans.ui.actions.editor</logger>
+  <level>FINE</level>
+  <thread>20</thread>
+  <message>UI_ACTION_EDITOR</message>
+  <key>UI_ACTION_EDITOR</key>
+  <catalog>&lt;null&gt;</catalog>
+  <param>no-ActionEvent</param>
+  <param>no-ActionEvent</param>
+  <param>org.netbeans.editor.BaseKit$SelectWordAction[select-word]</param>
+  <param>org.netbeans.editor.BaseKit$SelectWordAction@3c65549a</param>
+  <param>select-word</param>
+</record>
+<record>
+  <date>2013-02-19T12:27:55</date>
+  <millis>1361269675831</millis>
+  <sequence>70</sequence>
+  <logger>org.netbeans.ui.actions.editor</logger>
+  <level>FINE</level>
+  <thread>20</thread>
+  <message>UI_ACTION_EDITOR</message>
+  <key>UI_ACTION_EDITOR</key>
+  <catalog>&lt;null&gt;</catalog>
+  <param>no-ActionEvent</param>
+  <param>no-ActionEvent</param>
+  <param>org.netbeans.editor.BaseKit$SelectWordAction[select-word]</param>
+  <param>org.netbeans.editor.BaseKit$SelectWordAction@3c65549a</param>
+  <param>select-word</param>
+</record>
+<record>
+  <date>2013-02-19T12:28:25</date>
+  <millis>1361269705869</millis>
+  <sequence>71</sequence>
+  <logger>org.netbeans.ui.focus</logger>
+  <level>FINE</level>
+  <thread>20</thread>
+  <message>LOG_WINDOW_DEACTIVATED</message>
+  <key>LOG_WINDOW_DEACTIVATED</key>
+  <catalog>org.netbeans.core.ui.warmup.Bundle</catalog>
+</record>
+<record>
+  <date>2013-02-19T12:28:51</date>
+  <millis>1361269731044</millis>
+  <sequence>72</sequence>
+  <logger>org.netbeans.ui.focus</logger>
+  <level>FINE</level>
+  <thread>29</thread>
+  <message>LOG_WINDOW_ACTIVATED</message>
+  <key>LOG_WINDOW_ACTIVATED</key>
+  <catalog>org.netbeans.core.ui.warmup.Bundle</catalog>
+  <param>8</param>
+</record>
