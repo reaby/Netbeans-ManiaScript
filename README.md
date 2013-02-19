@@ -1,7 +1,7 @@
 Netbeans-ManiaScript
 ====================
 
-Maniascript language support for netbeans 7.2 and later
+Maniascript language support for netbeans 7.3 and later
 
 Installing
 ==========
