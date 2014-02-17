@@ -1,7 +1,7 @@
 options {
   JAVA_UNICODE_ESCAPE = true;
-  BUILD_PARSER = false;
-  ERROR_REPORTING = false;
+  BUILD_PARSER = true;
+  ERROR_REPORTING = true;
   STATIC = false;
   JDK_VERSION = "1.5";
   TOKEN_FACTORY = "Token";
@@ -72,7 +72,7 @@ MORE :
   < ~[] >
 }
 
-/* MANIASCRIPT RESERVED WORDS AND LITERALS */
+/* JAVA RESERVED WORDS AND LITERALS */
 
 TOKEN :
 {
@@ -117,11 +117,10 @@ TOKEN :
 | < WAIT: "wait" >
 | < YIELD: "yield" >
 | < WHILE: "while" >
-| < PERSISTENT: "persistent" >
 }
 
 
-/* MANIASCRIPT LITERALS */
+/* JAVA LITERALS */
 
 TOKEN :
 {

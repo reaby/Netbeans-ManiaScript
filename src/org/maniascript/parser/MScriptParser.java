@@ -1,7 +1,7 @@
 package org.maniascript.parser;
 
-import java.io.*;
-import java.util.*;
+import java.io.Reader;
+import java.io.StringReader;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.event.ChangeListener;
@@ -9,10 +9,8 @@ import org.netbeans.modules.parsing.api.Snapshot;
 import org.netbeans.modules.parsing.api.Task;
 import org.netbeans.modules.parsing.spi.Parser;
 import org.netbeans.modules.parsing.spi.Parser.Result;
-import org.netbeans.modules.parsing.spi.ParseException;
 import org.netbeans.modules.parsing.spi.SourceModificationEvent;
 import org.maniascript.jccparser.ManiaScriptParser;
-import org.maniascript.jccparser.Token;
 
 public class MScriptParser extends Parser {
 
@@ -20,54 +18,55 @@ public class MScriptParser extends Parser {
     private ManiaScriptParser javaParser;
 
     @Override
-    public void parse(Snapshot snapshot, Task task, SourceModificationEvent event) {
+    public void parse (Snapshot snapshot, Task task, SourceModificationEvent event) {
         this.snapshot = snapshot;
-        Reader reader = new StringReader(snapshot.getText().toString());
+        Reader reader = new StringReader(snapshot.getText().toString ());
         javaParser = new ManiaScriptParser(reader);
-        try {
-            javaParser.ManiaScriptFile();
-        } catch (org.maniascript.jccparser.ParseException ex) {
-            Logger.getLogger(ManiaScriptParser.class.getName()).log(Level.WARNING, null, ex);
-        }
-    }    
-
-    @Override
-    public Result getResult(Task task) {
-        return new MScriptParserResult(snapshot, javaParser);
+        //try {
+            javaParser.ReInit(reader);
+        //} catch (org.maniascript.jccparser.ParseException ex) {
+        //    Logger.getLogger (MScriptParser.class.getName()).log (Level.WARNING, null, ex);
+       // }
     }
 
     @Override
-    public void cancel() {
+    public Result getResult (Task task) {
+        return new SJParserResult (snapshot, javaParser);
     }
 
     @Override
-    public void addChangeListener(ChangeListener changeListener) {
+    public void cancel () {
     }
 
     @Override
-    public void removeChangeListener(ChangeListener changeListener) {
+    public void addChangeListener (ChangeListener changeListener) {
     }
 
-    public static class MScriptParserResult extends Result {
+    @Override
+    public void removeChangeListener (ChangeListener changeListener) {
+    }
+
+    
+    public static class SJParserResult extends Result {
 
         private ManiaScriptParser javaParser;
         private boolean valid = true;
 
-        MScriptParserResult(Snapshot snapshot, ManiaScriptParser javaParser) {
-            super(snapshot);
+        SJParserResult (Snapshot snapshot, ManiaScriptParser javaParser) {
+            super (snapshot);
             this.javaParser = javaParser;
         }
 
-        public ManiaScriptParser getManiaScriptParser() throws ParseException {
-            if (!valid) {
-                throw new ParseException();
-            }
+        public ManiaScriptParser getJavaParser () throws org.netbeans.modules.parsing.spi.ParseException {
+            if (!valid) throw new org.netbeans.modules.parsing.spi.ParseException ();
             return javaParser;
         }
 
         @Override
-        protected void invalidate() {
+        protected void invalidate () {
             valid = false;
         }
+
     }
+    
 }

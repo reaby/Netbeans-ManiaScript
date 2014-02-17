@@ -20,10 +20,9 @@ public class ManiascriptLanguage extends DefaultLanguageConfig {
         return "ManiaScript";
     }
 
-    /*
-      @Override
+    /*@Override
     public Parser getParser() {
         return new MScriptParser();
     } */
-    
+
 }

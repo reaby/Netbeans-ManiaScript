@@ -3,6 +3,7 @@ options {
   ERROR_REPORTING = true;
   STATIC = false;
   JDK_VERSION = "1.5";
+  COMMON_TOKEN_ACTION = false;
   TOKEN_FACTORY = "Token";
 }
 
@@ -16,7 +17,7 @@ import java.util.*;
 public class ManiaScriptParser {
 
 public static void main ( String args [ ] ) {
-                ManiaScriptParser parser;
+        ManiaScriptParser parser;
 		if(args.length == 0){
 			System.out.println("ManiaScript Parser Version 0.1Alpha:  Reading from standard input . . .");
 			parser = new ManiaScriptParser(System.in);
@@ -106,7 +107,7 @@ MORE :
   < ~[] >
 }
 
-/* JAVA RESERVED WORDS AND LITERALS */
+/*  RESERVED WORDS AND LITERALS */
 
 TOKEN :
 {
@@ -151,10 +152,11 @@ TOKEN :
 | < WAIT: "wait" >
 | < YIELD: "yield" >
 | < WHILE: "while" >
+| < PERSISTENT: "persistent" >
 }
 
 
-/* JAVA LITERALS */
+/* MANIASCRIPT LITERALS */
 
 TOKEN :
 {
@@ -315,15 +317,16 @@ TOKEN :
 
 void ManiaScriptFile() : {}
 {
-	(
-            (Statement())*
+	
+		(Statement())+
 	| 	<EOF>
-	)
+	
 }
 
 void Statement() : {}
 {
-	LOOKAHEAD(2) LabeledStatement() |
+	( 
+        LOOKAHEAD(2) LabeledStatement() |
 	LOOKAHEAD(2) ExpressionStatement() |
 	CompoundStatement() |
 	SelectionStatement() |
@@ -331,8 +334,8 @@ void Statement() : {}
 	JumpStatement() |
 	IncludeStatement() |
 	LogStatement() |
-	DefineStatement()
-|	EndOfStatement()
+	DefineStatement() )
+	EndOfStatement()
 }
 
 void EndOfStatement() : {}
@@ -498,7 +501,7 @@ void UnaryExpression() : {}
 
 void PrefixIncDecExpression() : {}
 {
-	("++" | "--" )* PostfixIncDecExpression()
+	("++" | "--" )*
 }
 
 void PostfixIncDecExpression() : {}
@@ -508,17 +511,8 @@ void PostfixIncDecExpression() : {}
 
 void PostfixExpression() : {}
 {
-	PrimaryExpression() ( "("  ArgumentExpressionList() ")" |
-						  "." PostfixExpression() | /* TODO: There is a problem here.  Variable members
-						  								can have reserved names since they are preceded
-						  								by a $, but the $ is ommitted here and this
-						  								parser will complain.  If you have declared:
-						  									private $array
-						  								you can have:
-														  	$this->array
-														which is fine with PHP,
-														but will generate an error in this parser */
-
+	PrimaryExpression() ( "(" ArgumentExpressionList() ")" |
+						  "." PostfixExpression() | 
 						  "::" PostfixExpression() |
 						  "[" [ Expression()] "]" |
 						  "{" Expression() "}"

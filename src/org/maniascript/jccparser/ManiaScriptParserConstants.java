@@ -169,9 +169,9 @@ public interface ManiaScriptParserConstants {
   /** RegularExpression Id. */
   int NE = 84;
   /** RegularExpression Id. */
-  int OR = 85;
+  int SC_OR = 85;
   /** RegularExpression Id. */
-  int AND = 86;
+  int SC_AND = 86;
   /** RegularExpression Id. */
   int INCR = 87;
   /** RegularExpression Id. */
@@ -208,6 +208,10 @@ public interface ManiaScriptParserConstants {
   int TEXTASSIGN = 103;
   /** RegularExpression Id. */
   int REMASSIGN = 104;
+  /** RegularExpression Id. */
+  int JAVACC_NUM_CHAR = 105;
+  /** RegularExpression Id. */
+  int ALL = 106;
 
   /** Lexical state. */
   int DEFAULT = 0;
@@ -327,14 +331,8 @@ public interface ManiaScriptParserConstants {
     "\"|=\"",
     "\"^=\"",
     "\"%=\"",
-    "\".=\"",
-    "\"<<=\"",
-    "\">>=\"",
-    "\"===\"",
-    "\"!==\"",
-    "\"<<\"",
-    "\">>\"",
-    "\"@\"",
+    "\"#\"",
+    "<ALL>",
   };
 
 }
