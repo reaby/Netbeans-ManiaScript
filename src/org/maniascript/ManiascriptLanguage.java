@@ -23,6 +23,6 @@ public class ManiascriptLanguage extends DefaultLanguageConfig {
     /*@Override
     public Parser getParser() {
         return new MScriptParser();
-    } */
-
+    }
+    */
 }

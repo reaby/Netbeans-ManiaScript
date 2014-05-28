@@ -75,14 +75,10 @@ public class maniasciptComplitionProvider implements CompletionProvider {
                     Exceptions.printStackTrace(ex);
                 }
 
-
-
-
-
                 XPathFactory factory = XPathFactory.newInstance();
                 XPath xpath = factory.newXPath();
                 try {
-                    //LOGGER.info(filter);
+                    LOGGER.info(filter);
                     String ffilter;
                     String[] filter2 = filter.split("\\(");
 
@@ -92,24 +88,50 @@ public class maniasciptComplitionProvider implements CompletionProvider {
                         ffilter = filter;
                     }
 
-
                     XPathExpression expr = xpath.compile("/*/*[starts-with(name(), '" + ffilter + "')]");
                     //     XPathExpression expr = xpath.compile("/cnod/buildin/*[starts-with(name(), '" + ffilter + "')]");
                     if (ffilter.contains(".")) {
                         String[] temp = ffilter.split("\\.");
+                         LOGGER.info("temp: "+temp.length);
+                        for (int i = 0; i < temp.length; i++) {
+                            LOGGER.info(temp[i]);
+
+                        }
+
+                        if (temp.length == 1) {
+                            LOGGER.info("/*//" + temp[0] + "/*]");
+                            expr = xpath.compile("//" + temp[0] + "/*");
+                        } 
+                        
                         if (temp.length > 1) {
-                            LOGGER.info("//" + temp[0] + "/*[starts-with(name(), '" + temp[1] + "')]");
+                            LOGGER.info("/*//" + temp[0] + "/*[starts-with(name(), '" + temp[1] + "')]");
                             expr = xpath.compile("//" + temp[0] + "/*[starts-with(name(), '" + temp[1] + "')]");
+                            caretOffset -= temp[0].length();
+                        }
+                        
+                        if (temp.length > 2) {
+                            StringBuilder sb = new StringBuilder("/*");
+                            for (int i = 0; i < temp.length - 2; i++) {
+                                sb.append("//");
+                                sb.append(temp[i]);
+                            }
+                            caretOffset -= sb.length();
+                            LOGGER.info(sb.toString() + "/*[starts-with(name(), '" + temp[temp.length-1] + "')]");
+                            expr = xpath.compile(sb.toString() + "/*[starts-with(name(), '" + temp[temp.length-1] + "')]");
 
                         }
                     }
                     if (ffilter.contains("::")) {
                         String[] temp = ffilter.split("\\:\\:");
-                        if (temp.length > 1) {
-                            expr = xpath.compile("//" + temp[0] + "/*[starts-with(name(), '" + temp[1] + "')]");
+                        if (temp.length > 2) {
+                            StringBuilder sb = new StringBuilder("");
+                            for (int i = 0; i < temp.length - 2; i++) {
+                                sb.append("//");
+                                sb.append(temp[i]);
+                            }
+                            expr = xpath.compile(sb.toString() + "/*[starts-with(name(), '" + temp[temp.length - 1] + "')]");
                         }
                     }
-
 
                     Object result = expr.evaluate(doc, XPathConstants.NODESET);
                     NodeList nodes = (NodeList) result;
@@ -118,26 +140,27 @@ public class maniasciptComplitionProvider implements CompletionProvider {
                         String helpItem = node.getNodeName();
 
                         String helpType;
-                        if (node.getTextContent().length() > 17) {
+                        /*if (node.getTextContent().length() > 17) {
                             helpType = "";
-                        } else {
+                        } else { */
                             helpType = node.getTextContent();
-                        }
+                        //}
 
                         completionResultSet.addItem(new AutoComplitionItem(helpItem, helpType, startOffset, caretOffset, 2));
 
                         traverseNodes(node, startOffset, caretOffset, completionResultSet);
-                        // String helpItem = node.getNodeName();
-                        // completionResultSet.addItem(new AutoComplitionItem(helpItem, startOffset, caretOffset));
-                        //  if (!helpItem.equals("") && helpItem.startsWith(filter)) {
-                        // completionResultSet.addItem(new AutoComplitionItem(helpItem, startOffset, caretOffset));
-                        //  }
+                        /*String helpItem = node.getNodeName();
+                         completionResultSet.addItem(new AutoComplitionItem(helpItem, startOffset, caretOffset));
+                         if (!helpItem.equals("") && helpItem.startsWith(filter)) {
+                         completionResultSet.addItem(new AutoComplitionItem(helpItem, startOffset, caretOffset)); 
+                          
+                         }
+                         */
                     }
 
                 } catch (Exception ex) {
                     Exceptions.printStackTrace(ex);
                 }
-
 
                 completionResultSet.finish();
             }
@@ -199,8 +222,8 @@ public class maniasciptComplitionProvider implements CompletionProvider {
         } else {
 
             if (n.getNodeName().equals("#text") || n.getNodeName().isEmpty()) {
-             return;
-             } 
+                return;
+            }
 
             String helpItem = parentNode + n.getNodeName();
 

@@ -1,6 +1,6 @@
 /**
  * comment for ManiaScript file
- * @author Petri Järvisalo
+ * @author
  */
 
 Text methodname (Integer param) {

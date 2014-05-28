@@ -24,65 +24,64 @@ import org.openide.windows.TopComponent;
     "LBL_maniascript_LOADER=Files of maniascript"
 })
 @MIMEResolver.ExtensionRegistration(
-    displayName = "#LBL_maniascript_LOADER",
-mimeType = "text/x-maniascript",
-extension = "txtm")
+        displayName = "#LBL_maniascript_LOADER",
+        mimeType = "text/x-maniascript",
+        extension = {"txtm", "Txtm"})
 @DataObject.Registration(
-    mimeType = "text/x-maniascript",
-iconBase = "org/maniascript/mplanet16.png",
-displayName = "#LBL_maniascript_LOADER",
-position = 300)
+        mimeType = "text/x-maniascript",
+        iconBase = "org/maniascript/mplanet16.png",
+        displayName = "#LBL_maniascript_LOADER",
+        position = 300)
 @ActionReferences({
     @ActionReference(
-        path = "Loaders/text/x-maniascript/Actions",
-    id =
-    @ActionID(category = "System", id = "org.openide.actions.OpenAction"),
-    position = 100,
-    separatorAfter = 200),
+            path = "Loaders/text/x-maniascript/Actions",
+            id = @ActionID(category = "System", id = "org.openide.actions.OpenAction"),
+            position = 100,
+            separatorAfter = 200),
     @ActionReference(
-        path = "Loaders/text/x-maniascript/Actions",
-    id =
-    @ActionID(category = "Edit", id = "org.openide.actions.CutAction"),
-    position = 300),
+            path = "Loaders/text/x-maniascript/Actions",
+            id
+            = @ActionID(category = "Edit", id = "org.openide.actions.CutAction"),
+            position = 300),
     @ActionReference(
-        path = "Loaders/text/x-maniascript/Actions",
-    id =
-    @ActionID(category = "Edit", id = "org.openide.actions.CopyAction"),
-    position = 400,
-    separatorAfter = 500),
+            path = "Loaders/text/x-maniascript/Actions",
+            id
+            = @ActionID(category = "Edit", id = "org.openide.actions.CopyAction"),
+            position = 400,
+            separatorAfter = 500),
     @ActionReference(
-        path = "Loaders/text/x-maniascript/Actions",
-    id =
-    @ActionID(category = "Edit", id = "org.openide.actions.DeleteAction"),
-    position = 600),
+            path = "Loaders/text/x-maniascript/Actions",
+            id
+            = @ActionID(category = "Edit", id = "org.openide.actions.DeleteAction"),
+            position = 600),
     @ActionReference(
-        path = "Loaders/text/x-maniascript/Actions",
-    id =
-    @ActionID(category = "System", id = "org.openide.actions.RenameAction"),
-    position = 700,
-    separatorAfter = 800),
+            path = "Loaders/text/x-maniascript/Actions",
+            id
+            = @ActionID(category = "System", id = "org.openide.actions.RenameAction"),
+            position = 700,
+            separatorAfter = 800),
     @ActionReference(
-        path = "Loaders/text/x-maniascript/Actions",
-    id =
-    @ActionID(category = "System", id = "org.openide.actions.SaveAsTemplateAction"),
-    position = 900,
-    separatorAfter = 1000),
+            path = "Loaders/text/x-maniascript/Actions",
+            id
+            = @ActionID(category = "System", id = "org.openide.actions.SaveAsTemplateAction"),
+            position = 900,
+            separatorAfter = 1000),
     @ActionReference(
-        path = "Loaders/text/x-maniascript/Actions",
-    id =
-    @ActionID(category = "System", id = "org.openide.actions.FileSystemAction"),
-    position = 1100,
-    separatorAfter = 1200),
+            path = "Loaders/text/x-maniascript/Actions",
+            id
+            = @ActionID(category = "System", id = "org.openide.actions.FileSystemAction"),
+            position = 1100,
+            separatorAfter = 1200),
     @ActionReference(
-        path = "Loaders/text/x-maniascript/Actions",
-    id =
-    @ActionID(category = "System", id = "org.openide.actions.ToolsAction"),
-    position = 1300),
+            path = "Loaders/text/x-maniascript/Actions",
+            id
+            = @ActionID(category = "System", id = "org.openide.actions.ToolsAction"),
+            position = 1300),
     @ActionReference(
-        path = "Loaders/text/x-maniascript/Actions",
-    id =
-    @ActionID(category = "System", id = "org.openide.actions.PropertiesAction"),
-    position = 1400)
+            path = "Loaders/text/x-maniascript/Actions",
+            id
+            = @ActionID(category = "System", id = "org.openide.actions.PropertiesAction"),
+            position = 1400)
 })
 public class maniascriptDataObject extends MultiDataObject {
 
@@ -97,12 +96,12 @@ public class maniascriptDataObject extends MultiDataObject {
     }
 
     @MultiViewElement.Registration(
-        displayName = "#LBL_maniascript_EDITOR",
-    iconBase = "org/maniascript/mplanet16.png",
-    mimeType = "text/x-maniascript",
-    persistenceType = TopComponent.PERSISTENCE_ONLY_OPENED,
-    preferredID = "maniascript",
-    position = 1000)
+            displayName = "#LBL_maniascript_EDITOR",
+            iconBase = "org/maniascript/mplanet16.png",
+            mimeType = "text/x-maniascript",
+            persistenceType = TopComponent.PERSISTENCE_ONLY_OPENED,
+            preferredID = "maniascript",
+            position = 1000)
     @Messages("LBL_maniascript_EDITOR=Source")
     public static MultiViewEditorElement createEditor(Lookup lkp) {
         return new MultiViewEditorElement(lkp);

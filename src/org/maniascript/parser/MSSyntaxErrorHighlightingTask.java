@@ -17,14 +17,15 @@ import org.openide.text.NbDocument;
 import org.openide.util.Exceptions;
 import org.maniascript.jccparser.ParseException;
 import org.maniascript.jccparser.Token;
-import org.maniascript.parser.MScriptParser.SJParserResult;
+import org.maniascript.parser.MScriptParser.MSParserResult;
+import org.netbeans.modules.csl.spi.ParserResult;
 
-public class MSSyntaxErrorHighlightingTask extends ParserResultTask {
+public class MSSyntaxErrorHighlightingTask extends ParserResultTask<Result> {
 
     @Override
     public void run (Result result, SchedulerEvent event) {
         try {
-            SJParserResult sjResult = (SJParserResult) result;
+            MSParserResult sjResult = (MSParserResult) result;
             List<ParseException> syntaxErrors = sjResult.getJavaParser ().syntaxErrors;
             Document document = result.getSnapshot ().getSource ().getDocument (false);
             List<ErrorDescription> errors = new ArrayList<ErrorDescription> ();

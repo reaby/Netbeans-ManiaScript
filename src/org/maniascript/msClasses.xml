@@ -1001,7 +1001,6 @@
         <Value>Text</Value>
         <ValueLineCount>Integer</ValueLineCount>
     </CMlLabel>
-    <main />
     <declare />
     <return />
     <if />
@@ -1037,7 +1036,4 @@
     <netwrite  />
     <Null />
     <NullId />
-    
-    
 </cnod>
-
